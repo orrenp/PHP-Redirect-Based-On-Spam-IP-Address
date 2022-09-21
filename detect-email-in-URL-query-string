@@ -1,0 +1,7 @@
+//Detect email
+$email = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$email_parts = parse_url($email);
+//echo $email_parts['query'];
+parse_str($email_parts['query'], $email_query);
+$email_final = $email_query['email'];
+echo $email_final."<br>";
